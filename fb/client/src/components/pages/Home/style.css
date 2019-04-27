@@ -29,7 +29,7 @@
 
 .showcase:before {
   content: '';
-  background: url("8-bit-background-1.jpg");
+  background: url("./8-bit-background-1.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -244,7 +244,7 @@ img {
   padding: 20vh;
   text-align: center;
   color: white;
-  background: url("backgroundcontent2.jpg");
+  background: url("./backgroundcontent2.jpg");
   background-size: cover;
 }
 
@@ -440,4 +440,4 @@ img {
   }
 }
 
-.overflow-hidden { overflow: hidden; } */
+.overflow-hidden { overflow: hidden; }
