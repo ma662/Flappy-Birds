@@ -29,9 +29,17 @@ import SignupPage from "./pages/Signup/Signup";
 // }
 
 
-class App extends Component {
-  render() {
 
+
+class App extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {}
+    }
+  }
+  render() {
     return (
   
       <Router>

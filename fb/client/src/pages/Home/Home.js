@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import "./style.css";
+import "./animate.css";
 
 function Home() {
   return (
