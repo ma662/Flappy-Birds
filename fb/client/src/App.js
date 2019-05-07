@@ -33,12 +33,12 @@ import SignupPage from "./pages/Signup/Signup";
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: {}
-    }
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     user: {}
+  //   }
+  // }
   render() {
     return (
   
@@ -48,9 +48,9 @@ class App extends Component {
           <Route exact path="/"
             render={
               () => (
-                <Fragment>
+                // <Fragment>
                   <HomePage  />
-                </Fragment>
+                // </Fragment>
               )
             }
           />
@@ -58,9 +58,9 @@ class App extends Component {
           <Route exact path="/login"
             render={
               () => (
-                <Fragment>
+                // <Fragment>
                   <LoginPage  />
-                </Fragment>
+                // </Fragment>
               )
             }
           />
@@ -68,9 +68,9 @@ class App extends Component {
           <Route exact path="/signup"
             render={
               () => (
-                <Fragment>
+                // <Fragment>
                   <SignupPage  />
-                </Fragment>
+                // </Fragment>
               )
             }
           />
@@ -78,9 +78,9 @@ class App extends Component {
           <Route exact path="/game" 
             render={
               () => (
-                <Fragment>
+                // <Fragment>
                   <GamePage />
-                </Fragment>
+                // </Fragment>
               )
             }
           />
