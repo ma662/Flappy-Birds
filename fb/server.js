@@ -6,14 +6,15 @@ const bodyParser = require("body-parser");
 const passport = require ("passport");
 
 // authentication
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
+
 // PORT
 const PORT = process.env.PORT || 3001;
 
 // import models
 var db = require("./models");
 
-const users = require("./routes/api/users");
+// const users = require("./routes/api/users");
 
 const app = express();
 // Bodyparser middleware
@@ -25,9 +26,9 @@ app.use(
 app.use(bodyParser.json());
 
 // Passport middleware
-app.use(passport.initialize());
+// app.use(passport.initialize());
 // Passport config
-require("./config/passport")(passport);
+// require("./config/passport")(passport);
 // Routes
 // app.use("/api/users", users);
 // app.use("./routes/api/users");
@@ -82,6 +83,7 @@ app.post("/api/signup", function(req, res) {
 
 app.post("/api/login", function(req, res) {
   // do login stuff==========================================================
+  
 });
 
 
