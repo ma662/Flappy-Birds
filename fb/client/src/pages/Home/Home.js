@@ -134,7 +134,7 @@ function Home() {
 
           <div className="column">
             <div className="card">
-              <img src="" alt="Jason" style={{ width: '100%' }} />
+              <img src="/assets/images/jason.jpg" alt="Jason" style={{ width: '100%' }} />
               <div className="container">
                 <h2>Jason</h2>
                 <p className="title">Front-End Designer</p>
@@ -147,7 +147,7 @@ function Home() {
 
           <div className="column">
             <div className="card">
-              <img src="" alt="Myles" style={{ width: '100%' }} />
+              <img src="/assets/images/myles.jpg" alt="Myles" style={{ width: '100%' }} />
               <div className="container">
                 <h2>Myles</h2>
                 <p className="title">Back-End Designer</p>
@@ -160,7 +160,7 @@ function Home() {
 
           <div className="column">
             <div className="card">
-              <img src="" alt="Tristan" style={{ width: '100%' }} />
+              <img src="/assets/images/tristan.jpg" alt="Tristan" style={{ width: '100%' }} />
               <div className="container">
                 <h2>Tristan</h2>
                 <p className="title">Front-End Designer</p>
