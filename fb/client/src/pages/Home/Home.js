@@ -27,7 +27,7 @@ function Home() {
                 <li><a href="/game">Game</a></li>
                 <li><a href="/signup">Sign-Up</a></li>
                 <li><a href="/login">Login</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/home">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -38,6 +38,12 @@ function Home() {
         <div className="container showcase-inner">
           <h1 className="glow">CROW RUSH</h1>
           <a href="/game" className="btn btn-light">Start Game</a>
+          <div className="audio1">
+            <audio id="myAudio" controls autoplay>
+            <source src="/assets/images/song.mp4" type="audio/mp4">
+            </source>
+            </audio>
+          </div>
           <section id="section05" class="demo">
             <a href="#"><span></span></a>
           </section>
@@ -84,11 +90,11 @@ function Home() {
 
 
       {/* slideshow begins */}
-      <div class="colorbackground">
+      <div class="colorbackground" height="500rem">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="/assets/images/backgroundcontent2.jpg" class="d-block w-100" alt="..." />
+              <img src="/assets/images/test1.jpg" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
               <img src="/assets/images/backgroundcontent3.jpg" class="d-block w-100" alt="..." />
@@ -160,11 +166,10 @@ function Home() {
                 <p className="title">Front-End Designer</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>example@example.com</p>
-                <p><button className="button">Portfolio</button></p>
+                <p><button a href="https://smove50.github.io/portfolio/" className="button">Portfolio</button></p>
               </div>
             </div>
           </div>
-
 
         </div>
       </div>
@@ -175,7 +180,7 @@ function Home() {
 
           <h2 class="WE">WE CAN FLY</h2>
           <h4>ALL RIGHTS RESERVED.</h4>
-
+        
         </footer>
       </div>
 
