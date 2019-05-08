@@ -1,11 +1,12 @@
-import React, { Component, Fragment } from "react";
+import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // import "./App.css";
 import HomePage from "./pages/Home/Home";
 import GamePage from "./pages/Game/GamePage";
-import LoginPage from "./pages/Login/Login";
-import SignupPage from "./pages/Signup/Signup";
+// import LoginPage from "./pages/Login/Login";
+import SignupPage from "./pages/Auth/Signup";
+import LoginPage from "./pages/Auth/Login";
 
 class App extends Component {
 
@@ -20,13 +21,10 @@ class App extends Component {
   
       <Router>
         <div>
-  
           <Route exact path="/"
             render={
               () => (
-                <Fragment>
-                  <HomePage  />
-                </Fragment>
+                <HomePage  />
               )
             }
           />
@@ -34,9 +32,7 @@ class App extends Component {
           <Route exact path="/login"
             render={
               () => (
-                <Fragment>
-                  <LoginPage  />
-                </Fragment>
+                <LoginPage  />
               )
             }
           />
@@ -44,9 +40,7 @@ class App extends Component {
           <Route exact path="/signup"
             render={
               () => (
-                <Fragment>
-                  <SignupPage  />
-                </Fragment>
+                  <SignupPage />
               )
             }
           />
@@ -54,9 +48,7 @@ class App extends Component {
           <Route exact path="/game" 
             render={
               () => (
-                <Fragment>
                   <GamePage />
-                </Fragment>
               )
             }
           />

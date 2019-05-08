@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-class Register extends Component {
+import localAPI from "../../util/local-auth";
+
+
+class Signup extends Component {
   constructor() {
     super();
     this.state = {
@@ -12,20 +15,44 @@ class Register extends Component {
     };
   }
 onChange = e => {
-    this.setState({ [e.target.id]: e.target.value });
-  };
+  this.setState({ [e.target.id]: e.target.value });
+};
 onSubmit = e => {
-    e.preventDefault();
-const newUser = {
-      name: this.state.name,
-      email: this.state.email,
-      password: this.state.password,
-      password2: this.state.password2
-    };
-console.log(newUser);
+  e.preventDefault();
+  let err = '';
+
+  const newUser = {
+    name: this.state.name,
+    email: this.state.email,
+    password: this.state.password,
+    password2: this.state.password2
   };
+
+  console.log(newUser);
+
+  // check if newUser looks good
+
+  if (newUser.password !== newUser.password2) {
+    err = "Passwords do not match";
+    console.log(err);
+    this.setState({errors: err});
+  }
+  if (this.state.errors.length !== 0) {
+    console.log("Do nothing, message should render");
+    err = "Some errors were detected during signup";
+    this.setState({errors: err});
+  }
+  
+  // then send to server to doublecheck
+  else {
+    localAPI.signup(newUser).then( response => {
+      // connect to localAPI 
+      console.log("RESPONSE IS:", response);
+    });
+  }
+}
 render() {
-    const { errors } = this.state;
+  const { errors } = this.state;
 return (
       <div className="container">
         <div className="row">
@@ -92,8 +119,7 @@ return (
                     marginTop: "1rem"
                   }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-                >
+                  className="btn btn-large waves-effect waves-light hoverable blue accent-3">
                   Sign up
                 </button>
               </div>
@@ -104,4 +130,4 @@ return (
     );
   }
 }
-export default Register;
+export default Signup;

@@ -7,6 +7,7 @@ const passport = require ("passport");
 
 // authentication
 const bcrypt = require("bcrypt");
+
 // PORT
 const PORT = process.env.PORT || 3001;
 
@@ -23,9 +24,13 @@ app.use(
 app.use(bodyParser.json());
 
 // Passport middleware
+// app.use(passport.initialize());
+
 app.use(passport.initialize());
+app.use(passport.session());
 // Passport config
 require("./config/passport")(passport);
+
 // Routes
 // app.use("/api/users", users);
 // app.use("./routes/api/users");
@@ -36,9 +41,19 @@ if (process.env.NODE_ENV === "production") {
 }
 app.use(express.json());
 
-
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/flappybirds_db";
-mongoose.connect( (MONGODB_URI), {useNewUrlParser: true} );
+mongoose.connect( (MONGODB_URI), { useNewUrlParser: true } );
+
+app.post("/_api/user", function(req, res) {
+  console.log("Non-cache route firing: ");
+  console.log("HERES THE INCOMING DATA FROM FORM:", req);
+  
+  db.UserAuth.findOne({}, function(err, user) {
+    if (err) throw err;
+    console.log(user);
+    res.json(user);
+  });
+});
 
 app.get("/api/display-users", function(req, res) {
 
@@ -59,23 +74,23 @@ app.get("/api/display-users", function(req, res) {
 
   db.UserAuth.find({}, function(err, ret) {
     if (err) throw err;
+    
     console.log(ret);
     res.json(ret);
   });
 });
 
-app.post("/api/signup", function(req, res) {
-  // do signup stuff=========================================================
+app.post("/_api/user/signup", function(req, res) {
+  // check if passwords match
+  // check if user exists
+  // add user to db 
 
-  // send to db==============================================================
-  db.UserAuth.create({
-    email: "email@email",
-    username: "testuser",
-    pass: "pass"
-  }).then(function(ret){
-    console.log("ret is:", ret);
-    res.json(ret);
-  });
+});
+
+app.post("/_api/user/login", function(req, res) {
+  console.log("HITTING THIS ROUTE:", req.body);
+
+  res.json(req.body);
 });
 
 app.post("/api/login", function(req, res) {
