@@ -81,7 +81,12 @@ app.get("/api/display-users", function(req, res) {
 });
 
 app.post("/_api/user/signup", function(req, res) {
+  console.log("WE GOT THE DATA HERE: ", req.body);
   // check if passwords match
+  if (req.body.password !== req.body.password2) {
+    console.log("Password mismatch");
+    res.json({ errorMessage: "Password mismatch" });
+  }
   // check if user exists
   // add user to db 
 

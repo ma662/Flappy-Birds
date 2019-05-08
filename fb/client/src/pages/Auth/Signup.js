@@ -11,7 +11,7 @@ class Signup extends Component {
       email: "",
       password: "",
       password2: "",
-      errors: {}
+      errorMessage: null
     };
   }
 onChange = e => {
@@ -19,7 +19,7 @@ onChange = e => {
 };
 onSubmit = e => {
   e.preventDefault();
-  let err = '';
+  let err = null;
 
   const newUser = {
     name: this.state.name,
@@ -31,28 +31,34 @@ onSubmit = e => {
   console.log(newUser);
 
   // check if newUser looks good
-
   if (newUser.password !== newUser.password2) {
     err = "Passwords do not match";
-    console.log(err);
-    this.setState({errors: err});
+    this.setState({errorMessage: err});
   }
-  if (this.state.errors.length !== 0) {
-    console.log("Do nothing, message should render");
-    err = "Some errors were detected during signup";
-    this.setState({errors: err});
+  else if (newUser.password === '' || newUser.password2 === '') {
+    err = "Password fields cannot be blank";
+    this.setState({errorMessage: err});
   }
-  
+  else if (newUser.name === '') {
+    err = "Name cannot be blank";
+    this.setState({errorMessage: err});
+  }
+  else if (newUser.email === '') {
+    err = "Email cannot be blank";
+    this.setState({errorMessage: err});
+  }
+
   // then send to server to doublecheck
   else {
+    console.log("Sending newUser now");
+    // connect to localAPI 
     localAPI.signup(newUser).then( response => {
-      // connect to localAPI 
       console.log("RESPONSE IS:", response);
     });
   }
 }
 render() {
-  const { errors } = this.state;
+const { errorMessage } = this.state;
 return (
       <div className="container">
         <div className="row">
@@ -69,12 +75,14 @@ return (
                 Already have an account? <Link to="/login">Log in</Link>
               </p>
             </div>
-            <form noValidate onSubmit={this.onSubmit}>
+
+            <form validate onSubmit={this.onSubmit} >
               <div className="input-field col s12">
                 <input
+                  required
                   onChange={this.onChange}
                   value={this.state.name}
-                  error={errors.name}
+                  // errorMessage={errorMessage.name}
                   id="name"
                   type="text"
                 />
@@ -82,9 +90,10 @@ return (
               </div>
               <div className="input-field col s12">
                 <input
+                  required
                   onChange={this.onChange}
                   value={this.state.email}
-                  error={errors.email}
+                  // errorMessage={errorMessage.email}
                   id="email"
                   type="email"
                 />
@@ -92,9 +101,10 @@ return (
               </div>
               <div className="input-field col s12">
                 <input
+                  required
                   onChange={this.onChange}
                   value={this.state.password}
-                  error={errors.password}
+                  // errorMessage={errorMessages.password}
                   id="password"
                   type="password"
                 />
@@ -102,9 +112,10 @@ return (
               </div>
               <div className="input-field col s12">
                 <input
+                  required
                   onChange={this.onChange}
                   value={this.state.password2}
-                  error={errors.password2}
+                  // errorMessage={errorMessage.password2}
                   id="password2"
                   type="password"
                 />
@@ -115,8 +126,8 @@ return (
                   style={{
                     width: "150px",
                     borderRadius: "3px",
-                    letterSpacing: "1.5px",
-                    marginTop: "1rem"
+                    // letterSpacing: "1.5px",
+                    // marginTop: "1rem"
                   }}
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3">
@@ -124,6 +135,7 @@ return (
                 </button>
               </div>
             </form>
+            {this.state.errorMessage}
           </div>
         </div>
       </div>
