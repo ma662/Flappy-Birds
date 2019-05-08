@@ -249,7 +249,7 @@ img {
 
 .parallax { 
   /* The image used */
-  background: url("/assets/images/clouds2.jpg");
+  background-image: url("/assets/images/clouds2.jpg");
 
   /* Full height */
   height: 100%; 
@@ -263,7 +263,7 @@ img {
 
 .parallax2 { 
   /* The image used */
-  background: url("/assets/css/floatingob.gif");
+ background-image: url("/assets/images/floatingob.gif");
 
   /* Full height */
   height: 100%; 

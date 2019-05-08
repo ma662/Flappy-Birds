@@ -3,12 +3,15 @@ import React, { Fragment } from 'react';
 import "./style.css";
 import "./script.js";
 
+
 function Home() {
   return (
     
     <Fragment>
+
+      
   
-    <script src="assets/java/script.js"></script>
+    
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/> 
 
       <div className="menu-wrap">
@@ -36,7 +39,7 @@ function Home() {
           <h1 className="glow">CROW RUSH</h1>
           <a href="/game" className="btn btn-light">Start Game</a>
           <section id="section05" class="demo">
-            <a><span></span></a>
+            <a href="#"><span></span></a>
           </section>
 
         </div>
@@ -81,7 +84,7 @@ function Home() {
 
 
       {/* slideshow begins */}
-      {/* <div class="colorbackground">
+      <div class="colorbackground">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -103,7 +106,7 @@ function Home() {
             <span class="sr-only">Next</span>
           </a>
         </div>
-      </div> */}
+      </div>
 
       {/* testing out parallax documentation */}
 
