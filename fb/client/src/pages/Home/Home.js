@@ -4,8 +4,9 @@ import "./style.css";
 
 function Home() {
   return (
-
+    
     <Fragment>
+  
 
       {/* <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css" media="screen" />
@@ -86,13 +87,13 @@ function Home() {
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="assets/images/backgroundcontent2.jpg" class="d-block w-100" alt="..." />
+              <img src="/assets/images/backgroundcontent2.jpg" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src="assets/images/backgroundcontent3.jpg" class="d-block w-100" alt="..." />
+              <img src="/assets/images/backgroundcontent3.jpg" class="d-block w-100" alt="..." />
             </div>
             <div class="carousel-item">
-              <img src="assets/images/backgroundcontent4.jpg" class="d-block w-100" alt="..." />
+              <img src="/assets/images/backgroundcontent4.jpg" class="d-block w-100" alt="..." />
             </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

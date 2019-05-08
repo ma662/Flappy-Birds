@@ -1,4 +1,5 @@
-
+/* header setup for webpage */
+/* CORE STYLES */
 :root {
   --overlay-color: rgba(24, 39, 51 , 0.85);
   --menu-speed: 0.75s;
@@ -64,7 +65,7 @@
   opacity: 0.7;
 }
 
-/*------------------------------- MENU STYLES ---------------------------------*/
+/* MENU STYLES */
 .menu-wrap {
   position: fixed;
   top: 0;
@@ -211,9 +212,11 @@
 
 .container1 {
   padding-top: 2vh;
+  /* padding-bottom: 8vh; */
   color: #75fa4c;
   align-content: center;
   background-size: auto;
+  /* background: url("backgroundcontent2.jpg"); */
   background-color: black;
 }
 
@@ -221,8 +224,8 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* height: 10rem;
-  width: 10rem; */
+  height: 10rem;
+  width: 10rem;
   
 }
 
@@ -232,6 +235,8 @@ img {
 
 .reactlogo {
   padding: 4vh;
+  /* position: relative; */
+  
 }
 
 .container2 {
@@ -246,8 +251,7 @@ img {
   height: 500px;
 }
 
-
-/*--------------------------- design for reponsive image and GAllery ------------------------ */
+/* design for reponsive image */
 
 
 /* Slideshow container */
@@ -257,7 +261,6 @@ img {
   max-width: 1000px;
   position: relative;
   margin: auto;
-  height: 500px;
 }
 
 /* Hide the images by default */
@@ -287,7 +290,7 @@ img {
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with hover*/
+/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
@@ -346,74 +349,7 @@ img {
   to {opacity: 1}
 }
 
-/* ------------------scroll icon at Beginning----------------------------- */
-section {
-  margin-top: 30vh;
-  position: relative;
-}
-section::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-section h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  white-space: nowrap;
-}
-
-#section05 a {
-  padding-top: 70px;
-}
-#section05 a span {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 24px;
-  height: 24px;
-  margin-left: -12px;
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -webkit-animation: sdb05 1.5s infinite;
-  animation: sdb05 1.5s infinite;
-  box-sizing: border-box;
-}
-@-webkit-keyframes sdb05 {
-  0% {
-    -webkit-transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-}
-@keyframes sdb05 {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-}
-
-/* this design part is for info on designers */
+/* this design part is for meet the designers */
 
 
 /* Three columns side by side */
@@ -437,20 +373,14 @@ section h1 {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-/*-------------------------- Some left and right padding inside the container ------------------------*/
-.colorbackground {
-background-color: #111216;
-}
-
+/* Some left and right padding inside the container */
 .container3 {
-  background-color: #1f0e5f;
   padding: 0 16px;
 }
 
-.designers1 {
-  margin-top: 2vh;
+.laser {
+  color: white;
   text-align: center;
-  color: #ea3cef;
 }
 
 /* Clear floats */
@@ -480,13 +410,43 @@ background-color: #111216;
   background-color: #555;
 }
 
+/*-------------------------- testing out parallax ----------------------- */
+
+.parallax {
+  /* The image used */
+  background-image: url("/assets/images/clouds1.png");
+
+  /* Set a specific height */
+  min-height: 250px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax2 {
+  /* The image used */
+  background-image: url("/assets/images/floatingob.gif");
+
+  /* Set a specific height */
+  min-height: 300px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 
-/*-------------------------- design for backGround Logo GLOW -----------------------------*/
+
+
+/* design for backGround Logo GLOW */
 
 .glow {
-  margin-top: 5vh;
-  font-size: 80px;
+  font-size: 100px;
   color: #75fa4c;
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
