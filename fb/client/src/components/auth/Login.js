@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+
 class Login extends Component {
   constructor() {
     super();
@@ -9,31 +10,33 @@ class Login extends Component {
       errors: {}
     };
   }
-onChange = e => {
+  onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
-onSubmit = e => {
+
+  onSubmit = e => {
     e.preventDefault();
-const userData = {
+
+    const userData = {
       email: this.state.email,
       password: this.state.password
     };
-console.log(userData);
+    console.log(userData);
   };
-render() {
+  render() {
     const { errors } = this.state;
-return (
+    return (
       <div className="container">
         <div style={{ marginTop: "4rem" }} className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">
               <i className="material-icons left">keyboard_backspace</i> Back to
               home
-            </Link>
+              </Link>
             <div className="col s12" style={{ paddingLeft: "11.250px" }}>
               <h4>
                 <b>Login</b> below
-              </h4>
+                </h4>
               <p className="grey-text text-darken-1">
                 Don't have an account? <Link to="/register">Register</Link>
               </p>
@@ -71,7 +74,7 @@ return (
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3"
                 >
                   Login
-                </button>
+                  </button>
               </div>
             </form>
           </div>

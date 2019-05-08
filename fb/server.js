@@ -13,8 +13,6 @@ const PORT = process.env.PORT || 3001;
 // import models
 var db = require("./models");
 
-const users = require("./routes/api/users");
-
 const app = express();
 // Bodyparser middleware
 app.use(

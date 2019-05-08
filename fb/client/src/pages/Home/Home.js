@@ -22,10 +22,10 @@ function Home() {
     */
     }
 
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="assets/java/script.js" media="screen" />
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/> 
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/assets/java/script.js" media="screen" />
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/>
 
     <div className="menu-wrap">
       <input type="checkbox" className="toggler"/>
@@ -66,8 +66,6 @@ function Home() {
         <div className="col-12 reactlogo">
           <img src="assets/images/React.js_logo-512.png" alt="react-logo" width="500rem" height="500rem" alt="logo for react"/>
         </div>
-          {/* <!-- <div className="col-sm">
-        </div> -->  */}
       </div>
     </div>
 
