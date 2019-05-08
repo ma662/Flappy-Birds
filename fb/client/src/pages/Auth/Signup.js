@@ -7,7 +7,7 @@ class Signup extends Component {
   constructor() {
     super();
     this.state = {
-      name: "",
+      username: "",
       email: "",
       password: "",
       password2: "",
@@ -22,13 +22,13 @@ onSubmit = e => {
   let err = null;
 
   const newUser = {
-    name: this.state.name,
+    username: this.state.username,
     email: this.state.email,
     password: this.state.password,
     password2: this.state.password2
   };
 
-  console.log(newUser);
+  // console.log(newUser);
 
   // check if newUser looks good
   if (newUser.password !== newUser.password2) {
@@ -39,7 +39,7 @@ onSubmit = e => {
     err = "Password fields cannot be blank";
     this.setState({errorMessage: err});
   }
-  else if (newUser.name === '') {
+  else if (newUser.username === '') {
     err = "Name cannot be blank";
     this.setState({errorMessage: err});
   }
@@ -53,12 +53,14 @@ onSubmit = e => {
     console.log("Sending newUser now");
     // connect to localAPI 
     localAPI.signup(newUser).then( response => {
-      console.log("RESPONSE IS:", response);
+      console.log("RESPONSE IS:", response.data);
+      var errorMessage = response.data.errorMessage;
+      this.setState({errorMessage: errorMessage});
     });
   }
 }
 render() {
-const { errorMessage } = this.state;
+// const { errorMessage } = this.state;
 return (
       <div className="container">
         <div className="row">
@@ -76,17 +78,17 @@ return (
               </p>
             </div>
 
-            <form validate onSubmit={this.onSubmit} >
+            <form validate="true" onSubmit={this.onSubmit} >
               <div className="input-field col s12">
                 <input
                   required
                   onChange={this.onChange}
-                  value={this.state.name}
+                  value={this.state.username}
                   // errorMessage={errorMessage.name}
-                  id="name"
+                  id="username"
                   type="text"
                 />
-                <label htmlFor="name">Name</label>
+                <label htmlFor="username">Username</label>
               </div>
               <div className="input-field col s12">
                 <input
