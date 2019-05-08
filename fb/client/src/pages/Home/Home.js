@@ -1,17 +1,15 @@
 import React, { Fragment } from 'react';
-import "./animate.css";
+// import "./animate.css";
 import "./style.css";
+import "./script.js";
 
 function Home() {
   return (
     
     <Fragment>
   
-
-      {/* <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="assets/css/animate.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="assets/java/script.js" media="screen" />
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/>  */}
+    <script src="assets/java/script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/> 
 
       <div className="menu-wrap">
         <input type="checkbox" className="toggler" />
@@ -22,11 +20,11 @@ function Home() {
           <div>
             <div>
               <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#game">Game</a></li>
-                <li><a href="#signup">Sign-Up</a></li>
-                <li><a href="#login">Login</a></li>
-                <li><a href="#logout">Logout</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/game">Game</a></li>
+                <li><a href="/signup">Sign-Up</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/logout">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -36,9 +34,9 @@ function Home() {
       <header className="showcase">
         <div className="container showcase-inner">
           <h1 className="glow">CROW RUSH</h1>
-          <a href="#game" className="btn btn-light">Start Game</a>
+          <a href="/game" className="btn btn-light">Start Game</a>
           <section id="section05" class="demo">
-            <a href="#container1"><span></span></a>
+            <a><span></span></a>
           </section>
 
         </div>
@@ -52,7 +50,7 @@ function Home() {
           {/* <!-- <div className="col-sm">
         </div> -->  */}
           <div className="col-12 reactlogo ">
-            <img src="assets/images/React.js_logo-512.png" alt="react-logo" width="500rem" height="600rem" />
+            <img src="assets/images/React.js_logo-512.png" alt="react-logo" width="150rem" height="200rem" />
           </div>
 
         </div>
@@ -83,7 +81,7 @@ function Home() {
 
 
       {/* slideshow begins */}
-      <div class="colorbackground">
+      {/* <div class="colorbackground">
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -105,7 +103,7 @@ function Home() {
             <span class="sr-only">Next</span>
           </a>
         </div>
-      </div>
+      </div> */}
 
       {/* testing out parallax documentation */}
 
@@ -142,7 +140,7 @@ function Home() {
             <div className="card">
               <img src="" alt="Myles" style={{ width: '100%' }} />
               <div className="container">
-                <h2>Myles </h2>
+                <h2>Myles</h2>
                 <p className="title">Back-End Designer</p>
                 <p>Some text that describes me lorem ipsum ipsum lorem.</p>
                 <p>example@example.com</p>
