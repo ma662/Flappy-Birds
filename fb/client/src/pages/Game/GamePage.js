@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import LocalAPI from "../../util/local-auth";
+import AppContainer from "./containers/AppContainer";
 
 class GamePage extends Component {
   componentDidMount = () => {
@@ -31,7 +32,7 @@ class GamePage extends Component {
       return(
         <Fragment>
           <h3> Welcome {this.props.user.username}! </h3>
-          <p> Game would go here </p>
+          <AppContainer />
         </Fragment>
         );
     }
