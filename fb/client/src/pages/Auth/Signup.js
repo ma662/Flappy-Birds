@@ -91,7 +91,7 @@ class Signup extends Component {
           </div>
         </div>
 
-        <div className="container">
+        <div className="containersign">
           <div className="row">
             <div className="col s8 offset-s2">
               <Link to="/" className="btn-flat waves-effect">

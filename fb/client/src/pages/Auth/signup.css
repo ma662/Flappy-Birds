@@ -1,7 +1,4 @@
-#sign-up,
-#log-in {
-    
-}
+
 
 .button {
     font-family: "press Start 2P", cursive;
@@ -14,7 +11,7 @@
     background-color: blue;
 }
 
-.container:before {
+.containersign:before {
     content: '';
     background: url("/assets/images/8-bit-background-1.jpg");
     position: absolute;
@@ -29,7 +26,8 @@
     background-size: cover;
 }
 
-.auth-form {
+.containersign {
+    margin-top: 10vh;
     padding: 4vh;
     background-color: white;
 }
