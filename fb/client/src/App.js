@@ -78,15 +78,14 @@ class App extends Component {
             render={
               () => (
                 <SignupPage />
-              )
-            }
+              )}
           />
 
           <Route exact path="/game"
             render={
               () => (
                   // <GamePage />
-                <GamePage {...this.props} user={this.state.user} />
+                <GamePage {...this.props} setUser={this.setUser} user={this.state.user} />
               )
             }
           />

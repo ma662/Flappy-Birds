@@ -102,7 +102,9 @@ module.exports = function (app, passport) {
   */
 
   app.get("/_api/user", (req, res) => {
+    
     if (req.user) {
+      // console.log(req.user);
       let temp= {};
 
       temp.email = req.user.email;
@@ -115,12 +117,11 @@ module.exports = function (app, passport) {
   });
 
   app.post("/_api/user/login",
-  // THIS LINE IS TOTALLY FUCKED
+  
+  // THIS LINE IS NO LONGER TOTALLY FUCKED 
   passport.authenticate("local"),
-  function (req, res)  {
-    
-      console.log("LOGIN REQ:", req.user);
-
+  function (req, res)  {    
+      // uname, email, pass
       if (req.user) {
         let temp = {};
         temp.email = req.user.email;

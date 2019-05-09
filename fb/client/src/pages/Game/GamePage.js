@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import localAPI from "../../util/local-auth";
+import LocalAPI from "../../util/local-auth";
 
 class GamePage extends Component {
   componentDidMount = () => {
-    localAPI.retrieveUser().then( userResponse => {
+    LocalAPI.retrieveUser().then( userResponse => {
+      console.log(userResponse);
+      console.log("LOGLOGLOGLOGLOGLOGLOGLOGLOGLOG");
+
       if(userResponse.data){
         this.props.setUser(userResponse.data);
       }

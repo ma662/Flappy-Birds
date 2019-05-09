@@ -34,7 +34,6 @@ class LoginPage extends Component {
     // console.log(this.state.email, this.state.password);
 
     console.log(temp);
-    temp = JSON.stringify(temp);
 
     localAPI.login(temp)
     .then(response => {
@@ -42,27 +41,28 @@ class LoginPage extends Component {
       let user = response.data;
 
       console.log("user is: ", user);
-      // make sure we have an email
-    //   if (user && user.email) {
-    //     alert("USER VERIFIED");
-    //     this.props.setUser(user);
-    //     this.setState({
-    //       message: null
-    //     });
-    //   }
-    //   else {
-    //     alert("ALERT");
-    //     this.setState({
-    //       message: "Credentials could not be verified"
-    //     });
-    //   }
-    // }).catch(error => {
-    //   console.log(error);
-    //   console.log("Error above");
 
-    //   this.setState({
-    //     message: "Could not log in"
-    //   });
+      // make sure we have an email
+      if (user && user.email) {
+        alert("USER VERIFIED");
+        this.props.setUser(user);
+        this.setState({
+          message: null
+        });
+      }
+      else {
+        alert("Could not be verified");
+        this.setState({
+          message: "Credentials could not be verified"
+        });
+      }
+    }).catch(error => {
+      console.log(error);
+      console.log("Error above");
+
+      this.setState({
+        message: "Could not log in"
+      });
     })
     .catch( err => {
       console.log(err);

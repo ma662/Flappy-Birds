@@ -28,31 +28,39 @@ if (process.env.NODE_ENV === "production") {
 
 // Passport setup
 let userList = [];
-
 passport.use(new LocalStrategy(
   {usernameField:"email", passwordField:"password"},
   function(email, password, done) {
-
     //try to find user
-  db.User.findOne({
-      email: email,
-      password: password // there are better ways to verify password
-  })
-  .then(user => {
-    if(!user){
-      // if we can't find the user... return error
+    db.UserAuth.findOne({
+        email: email
+        // password: password // This actually gets done by bCrypt
+    })
+    .then(user => {
+      if(!user){
+        // if we can't find the user... return error
+        return done("No user found", null, { message: "No user found" });
+      }
+      else{
+        bcrypt.compare(password, user.password, (err, isMatch) => {
+          if (err) {
+            throw err;
+          }
+          if (isMatch) {
+            // console.log(user);
+            return done(null, user);
+          } else {
+            return done(null, false, { message: "Password Incorrect" });
+          }
+        });
+        //more magic after finding the user
+        // return done(null, user);
+      }
+    })
+    .catch( err => {
       console.log(err);
       return done(err, null);
-    }
-    else{
-      //more magic after finding the user
-      return done(null, user);
-    }
-  })
-  .catch( err => {
-    console.log(err);
-    return done(err, null);
-  });
+    });
   }
 ))
 
