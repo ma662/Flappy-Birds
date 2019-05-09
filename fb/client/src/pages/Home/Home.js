@@ -80,7 +80,7 @@ function Home() {
           {/* <!-- <div className="col-sm">
         </div> -->  */}
           <div className="col-12 reactlogo animated zoomIn delay-2s">
-            <img src="assets/images/React.js_logo-512.png" alt="react-logo" width="150rem" height="200rem" />
+            <img src="assets/images/react_logo.png" alt="react-logo" width="150rem" height="200rem" />
           </div>
 
         </div>
@@ -146,7 +146,7 @@ function Home() {
       {/* testing out bird design since parallax dont work */}
 
       <div class="testbird">
-      <img class="animated fadeInLeft delay-8s" src="assets/images/crowforfrontend.png" alt="react-logo"/>
+      <img class="animated fadeInLeft delay-8s" src="assets/images/crow2.png" alt="crow"/>
       </div>
 
 
