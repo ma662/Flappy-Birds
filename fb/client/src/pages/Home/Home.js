@@ -58,7 +58,7 @@ function Home() {
       <header className="showcase">
         <div className="container showcase-inner">
           <h1 className="glow">CROW RUSH</h1>
-          <a href="/game" className="btn btn-light">Start Game</a>
+          <a href="/signup" className="btn btn-light">Start Game</a>
           <div className="audio1">
             <audio id="myAudio" controls>
             <source src="/assets/images/song.mp4" type="audio/mp4">
