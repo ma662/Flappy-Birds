@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-<<<<<<< HEAD
-import "./login.css";
-=======
 import { Link } from "react-router-dom";
 import "./style.css";
->>>>>>> login3
 
 class LoginPage extends Component { 
   render() {
