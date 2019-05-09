@@ -250,7 +250,7 @@ img {
   height: 2px;
   padding: 20vh;
   text-align: center;
-  color: white;
+  color: #75fa4c;
   background: url("/assets/images/backgroundcontent2.jpg");
   background-size: cover;
 }
@@ -286,13 +286,15 @@ img {
 .testbird {
   background-color: #cd1fd8;
   height: 400px;
+  border: #75fa4c;
+  border-width: thin;
 }
 
 
 
 /*------------------------- desinging the flaoting gif  ----------------------------------*/
 .floatinggif {
-  background-color: #111216;
+  background-color: #1f0e5f;
   padding: 3vh;
 }
 
@@ -415,7 +417,7 @@ section h1 {
 
 .laser {
   text-align: center;
-  color: white;
+  color: #75fa4c;
 }
 
 /* Clear floats */
@@ -456,7 +458,7 @@ section h1 {
   width: 100%;
   height: 100%;
   background-color: #121111;
-  color: #76a295;
+  color: #75fa4c;
   text-align: center;
 }
 
