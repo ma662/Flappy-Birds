@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
 import localAPI from "../../util/local-auth";
-// import "./style.css";
+import "./login.css";
 
 class LoginPage extends Component {
   state = {

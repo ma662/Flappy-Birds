@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import localAPI from "../../util/local-auth";
-
+import "./signup.css";
 
 class Signup extends Component {
   constructor() {

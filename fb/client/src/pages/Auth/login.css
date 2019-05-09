@@ -11,12 +11,12 @@
 }
 
 body {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     text-align: center;
     display: flex;
     justify-content: center;
-    background: url("/assets/images/8-bit-background-1.jpg");
-    background-repeat: no-repeat;
+    /* background: url("/assets/images/8-bit-background-1.jpg"); */
+    /* background-repeat: no-repeat; */
     
 }
 
