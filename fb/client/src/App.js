@@ -1,12 +1,13 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 // import "./App.css";
 import HomePage from "./pages/Home/Home";
 import GamePage from "./pages/Game/GamePage";
-// import LoginPage from "./pages/Login/Login";
 import SignupPage from "./pages/Auth/Signup";
 import LoginPage from "./pages/Auth/Login";
+
+import localAPI from "./util/local-auth";
 
 class App extends Component {
 
@@ -16,6 +17,35 @@ class App extends Component {
       user: {}
     }
   }
+
+  componentDidMount = () => {
+    if (!this.state.user || !this.state.user.email) {
+      alert("Attempting retrieveUser()");
+
+      localAPI.retrieveUser().then(user => {
+        console.log(user);
+
+        if (user) {
+          this.setState({ user: user.data });
+        }
+      });
+    }
+  }
+
+  logOut = () => {
+    localAPI.logout().then( res => {
+      this.setUser({});
+      return <Redirect to='/'/>
+    })
+  }
+
+  setUser = user => {
+    this.setState({
+      user: user
+    });
+  };
+
+
   render() {
     return (
   
@@ -24,35 +54,42 @@ class App extends Component {
           <Route exact path="/"
             render={
               () => (
-                <HomePage  />
+                <HomePage {...this.props} setUser={this.setUser} user={this.state.user} />
               )
             }
           />
   
-          <Route exact path="/login"
+          {/* <Route exact path="/login"
             render={
               () => (
                 <LoginPage  />
               )
             }
-          />
+          /> */}
+
+          <Route exact path="/login" 
+            render = {
+              () => (
+                <LoginPage {...this.props} setUser={this.setUser} user={this.state.user} />
+              )} />
+
   
           <Route exact path="/signup"
             render={
               () => (
-                  <SignupPage />
+                <SignupPage />
               )
             }
           />
-  
-          <Route exact path="/game" 
+
+          <Route exact path="/game"
             render={
               () => (
-                  <GamePage />
+                  // <GamePage />
+                <GamePage {...this.props} user={this.state.user} />
               )
             }
           />
-  
         </div>
       </Router>
     );

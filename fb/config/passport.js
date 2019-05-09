@@ -35,9 +35,9 @@ module.exports = function(passport) {
     done(null, user.id);
   });
 
-  // // when we retrieve the data from a user session
+  // when we retrieve the data from a user session
   passport.deserializeUser(function(id, done) {
-    db.User.findOne({ where: { id: id } })
+    db.User.findOne({ id: id })
       .then(function(user) {
         done(null, user);
       })

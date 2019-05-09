@@ -11,7 +11,7 @@ class Signup extends Component {
       email: "",
       password: "",
       password2: "",
-      errorMessage: null
+      message: null
     };
   }
 onChange = e => {
@@ -21,7 +21,7 @@ onSubmit = e => {
   e.preventDefault();
   let err = null;
 
-  const newUser = {
+  const chkUser = {
     username: this.state.username,
     email: this.state.email,
     password: this.state.password,
@@ -30,37 +30,45 @@ onSubmit = e => {
 
   // console.log(newUser);
 
-  // check if newUser looks good
-  if (newUser.password !== newUser.password2) {
+  // check if chkUser looks good
+  if (chkUser.password !== chkUser.password2) {
     err = "Passwords do not match";
-    this.setState({errorMessage: err});
+    this.setState({message: err});
   }
-  else if (newUser.password === '' || newUser.password2 === '') {
+  else if (chkUser.password === '' || chkUser.password2 === '') {
     err = "Password fields cannot be blank";
-    this.setState({errorMessage: err});
+    this.setState({message: err});
   }
-  else if (newUser.username === '') {
+  else if (chkUser.username === '') {
     err = "Name cannot be blank";
-    this.setState({errorMessage: err});
+    this.setState({message: err});
   }
-  else if (newUser.email === '') {
+  else if (chkUser.email === '') {
     err = "Email cannot be blank";
-    this.setState({errorMessage: err});
+    this.setState({message: err});
   }
 
   // then send to server to doublecheck
   else {
+    const newUser = {};
+    newUser.username = this.state.username;
+    newUser.email = this.state.email;
+    newUser.pass = this.state.password;
+
     console.log("Sending newUser now");
+    
     // connect to localAPI 
     localAPI.signup(newUser).then( response => {
       console.log("RESPONSE IS:", response.data);
-      var errorMessage = response.data.errorMessage;
-      this.setState({errorMessage: errorMessage});
+      var new_message = response.data.message;
+      console.log(new_message);
+      this.setState({message: new_message});
+      alert("done, should have updated");
     });
   }
 }
 render() {
-// const { errorMessage } = this.state;
+// const { message } = this.state;
 return (
       <div className="container">
         <div className="row">
@@ -84,7 +92,7 @@ return (
                   required
                   onChange={this.onChange}
                   value={this.state.username}
-                  // errorMessage={errorMessage.name}
+                  // message={message.name}
                   id="username"
                   type="text"
                 />
@@ -95,7 +103,7 @@ return (
                   required
                   onChange={this.onChange}
                   value={this.state.email}
-                  // errorMessage={errorMessage.email}
+                  // message={message.email}
                   id="email"
                   type="email"
                 />
@@ -106,7 +114,8 @@ return (
                   required
                   onChange={this.onChange}
                   value={this.state.password}
-                  // errorMessage={errorMessages.password}
+                  name="pass"
+                  // message={messages.password}
                   id="password"
                   type="password"
                 />
@@ -117,7 +126,7 @@ return (
                   required
                   onChange={this.onChange}
                   value={this.state.password2}
-                  // errorMessage={errorMessage.password2}
+                  // message={message.password2}
                   id="password2"
                   type="password"
                 />
@@ -128,8 +137,6 @@ return (
                   style={{
                     width: "150px",
                     borderRadius: "3px",
-                    // letterSpacing: "1.5px",
-                    // marginTop: "1rem"
                   }}
                   type="submit"
                   className="btn btn-large waves-effect waves-light hoverable blue accent-3">
@@ -137,7 +144,7 @@ return (
                 </button>
               </div>
             </form>
-            {this.state.errorMessage}
+            {this.state.message}
           </div>
         </div>
       </div>
