@@ -82,7 +82,7 @@ function Home() {
           <div className="col-12 reactlogo animated zoomIn delay-2s">
             <img src="assets/images/react_logo.png" alt="react-logo" width="150rem" height="200rem" />
           </div>
-
+ 
         </div>
       </div>
 
