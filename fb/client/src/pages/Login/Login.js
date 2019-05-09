@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { Link } from "react-router-dom";
 import "./login.css";
 
@@ -16,10 +16,10 @@ class LoginPage extends Component {
             <div>
               <ul>
                 <li><a href="/home">Home</a></li>
-                <li><a href="/game">Game</a></li>
+                {/* <li><a href="/game">Game</a></li> */}
                 <li><a href="/signup">Sign-Up</a></li>
                 {/* <li><a href="/login">Login</a></li> */}
-                <li><a href="/home">Logout</a></li>
+                {/* <li><a href="/home">Logout</a></li> */}
               </ul>
             </div>
           </div>

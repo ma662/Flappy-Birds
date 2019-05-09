@@ -85,11 +85,11 @@ class LoginPage extends Component {
             <div>
               <div>
                 <ul>
-                  <li><a href="/home">Home</a></li>
-                  <li><a href="/game">Game</a></li>
+                  <li><a href="/">Home</a></li>
+                  {/* <li><a href="/game">Game</a></li> */}
                   <li><a href="/signup">Sign-Up</a></li>
-                  <li><a href="/login">Login</a></li>
-                  <li><a href="/home">Logout</a></li>
+                  {/* <li><a href="/login">Login</a></li> */}
+                  {/* <li><a href="/home">Logout</a></li> */}
                 </ul>
               </div>
             </div>
@@ -97,7 +97,7 @@ class LoginPage extends Component {
         </div>
 
 
-        <div>
+        <div className="containerlogin">
           <form className="auth-form" type="POST">
             <div className="form-group">
               <label htmlFor="email">Email:</label>

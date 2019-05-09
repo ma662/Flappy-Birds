@@ -35,3 +35,18 @@ body {
     color: palevioletred;
 }
 
+.containerlogin:before {
+    content: '';
+    background: url("/assets/images/8-bit-background-1.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}

@@ -3,29 +3,11 @@
     
 }
 
-body {
-    padding-top: 50px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    /* background: url("/assets/images/8-bit-background-1.jpg"); */
-    background-repeat: no-repeat;
-    background-size: 100vw;
-}
-
 .button {
     font-family: "press Start 2P", cursive;
     padding: 5%;
     font-size: medium;
 
-}
-
-.text-box {
-    width: 60%
-}
-
-.container {
-    background-color: white;
 }
 
 .btn {
@@ -45,4 +27,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.auth-form {
+    padding: 4vh;
+    background-color: white;
 }
