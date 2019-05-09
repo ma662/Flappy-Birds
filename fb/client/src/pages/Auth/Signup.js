@@ -63,7 +63,7 @@ onSubmit = e => {
       var new_message = response.data.message;
       console.log(new_message);
       this.setState({message: new_message});
-      alert("done, should have updated");
+      // alert("done, should have updated");
     });
   }
 }

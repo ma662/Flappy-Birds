@@ -45,14 +45,14 @@ class LoginPage extends Component {
 
         // make sure we have an email
         if (user && user.email) {
-          alert("USER VERIFIED");
+          // alert("Verification Complete");
           this.props.setUser(user);
           this.setState({
             message: null
           });
         }
         else {
-          alert("Could not be verified");
+          // alert("Could not be verified");
           this.setState({
             message: "Credentials could not be verified"
           });
@@ -71,7 +71,7 @@ class LoginPage extends Component {
   }
   render() {
     if (this.props.user && this.props.user.email) {
-      alert("Time to redirect?");
+      // alert("Time to redirect?");
       return <Redirect to="/game" />;
     }
     return (

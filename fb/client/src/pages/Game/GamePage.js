@@ -12,8 +12,8 @@ class GamePage extends Component {
         this.props.setUser(userResponse.data); // email, username
       }
       else{
-        alert("Login first?");
         window.location = "/login";
+        // alert("Please Login");
       }
     })
   }

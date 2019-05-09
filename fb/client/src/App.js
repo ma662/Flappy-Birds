@@ -20,7 +20,7 @@ class App extends Component {
 
   componentDidMount = () => {
     if (!this.state.user || !this.state.user.email) {
-      alert("Attempting retrieveUser()");
+      // alert("Attempting retrieveUser()");
 
       localAPI.retrieveUser()
       .then(user => {

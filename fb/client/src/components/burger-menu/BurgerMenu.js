@@ -17,7 +17,7 @@ function BurgerMenu() {
   
   // logout
     // home
-    
+  
   return (
     <div className="menu-wrap">
       <input type="checkbox" className="toggler" />
