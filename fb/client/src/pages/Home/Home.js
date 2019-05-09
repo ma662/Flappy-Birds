@@ -56,7 +56,7 @@ function Home() {
           <h1 className="glow">CROW RUSH</h1>
           <a href="/game" className="btn btn-light">Start Game</a>
           <div className="audio1">
-            <audio id="myAudio" controls autoplay>
+            <audio id="myAudio" controls>
             <source src="/assets/images/song.mp4" type="audio/mp4">
             </source>
             </audio>
