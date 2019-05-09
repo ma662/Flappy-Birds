@@ -30,34 +30,68 @@ if (process.env.NODE_ENV === "production") {
 let userList = [];
 
 passport.use(new LocalStrategy(
-  {usernameField: "email", passwordField: "pass"},
-  function(email, pass, done) {
-    db.UserAuth.findOne({
+  {usernameField:"email", passwordField:"password"},
+  function(email, password, done) {
+
+    //try to find user
+  db.User.findOne({
       email: email,
-      pass: pass
-    })
-    .then(function(user){
-      if (!user) {
-        console.log(err);
-        return done(err, null);
-      }
-      else{
-        return done(null, user);
-      }
-    })
-    .catch( err => {
+      password: password // there are better ways to verify password
+  })
+  .then(user => {
+    if(!user){
+      // if we can't find the user... return error
       console.log(err);
-      return(err, null);
-    });
+      return done(err, null);
+    }
+    else{
+      //more magic after finding the user
+      return done(null, user);
+    }
+  })
+  .catch( err => {
+    console.log(err);
+    return done(err, null);
+  });
   }
-));
+))
+
+// passport.use(new localStrategy(
+//   { usernameField: "email", passwordField: "password"},
+//   function (email, password, done) {
+//     //match user
+//     db.UserAuth.findOne({
+//       email: email,
+//       password: password
+//     }).then(user => {
+//       console.log("LOGGING FROM PASSPORT:", user);
+//       console.log(user);
+//       if (!user) {
+//         return done(null, false, { message: "No User Found!" });
+//       }
+//       // match password
+//       bcrypt.compare(password, user.password, (err, isMatch) => {
+//         if (err) {
+//           throw err;
+//         }
+//         if (isMatch) {
+//           // console.log(user);
+//           return done(null, user);
+//         } else {
+//           return done(null, false, { message: "Password Incorrect" });
+//         }
+//       });
+//     });
+//   }
+// ));
+// ));
 
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
 
 passport.deserializeUser(function(id, done) {
-  db.UserAuth.findOne({ id: id })
+  db.UserAuth.findOne({ _id: id })
   .then(function (user) {
     done(null, user);
   })
@@ -67,12 +101,17 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-require("./routes/api-routes.js")(app, passport);
+require("./routes/api-routes")(app, passport);
 
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  if (process.env.NODE_ENV === "production") {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  }
+  else {
+    res.json({"message": "Go to http://localhost:3000"});
+  }
 });
 
 app.listen(PORT, function() {

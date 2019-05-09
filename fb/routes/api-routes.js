@@ -23,7 +23,7 @@ module.exports = function (app, passport) {
     //   errors.push(".");
     //   return res.json({ message: "Passwords do not match" });
     // }
-    if (req.body.pass.length < 4) {
+    if (req.body.password.length < 4) {
       errors.push(".");
       return res.json({ message: "Password must be atleast 4 characters" });
     }
@@ -53,15 +53,15 @@ module.exports = function (app, passport) {
           const newUser = {
             username: req.body.username,
             email: req.body.email,
-            pass: req.body.pass
+            password: req.body.password
           };
   
           bcrypt.genSalt(10, (err, salt) => {
-            bcrypt.hash(newUser.pass, salt, (err, hash) => {
+            bcrypt.hash(newUser.password, salt, (err, hash) => {
               if (err) {
                 throw err;
               }
-              newUser.pass = hash;
+              newUser.password = hash;
               db.UserAuth.create(newUser);
               return res.json({ message: "Signup successful. Please Login to continue."});
             });
@@ -180,15 +180,15 @@ module.exports = function (app, passport) {
   //         const newUser = {
   //           username: req.body.username,
   //           email: req.body.email,
-  //           pass: req.body.password
+  //           password: req.body.password
   //         };
   
   //         bcrypt.genSalt(10, (err, salt) => {
-  //           bcrypt.hash(newUser.pass, salt, (err, hash) => {
+  //           bcrypt.hash(newUser.password, salt, (err, hash) => {
   //             if (err) {
   //               throw err;
   //             }
-  //             newUser.pass = hash;
+  //             newUser.password = hash;
   //             db.UserAuth.create(newUser);
   //             return res.json({ message: "Signup successful. Please Login to continue."});
   //           });

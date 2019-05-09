@@ -10,19 +10,19 @@ class GamePage extends Component {
     })
   }
   render() {
-    // if (this.props.user) {
-    //   console.log(this.props.user);
-    //   alert("User is:", this.props.user);
-    //   return(
-    //    <p> Game would go here </p>
-    //     );
-    // }
-    // else {
-    //   return(<p> You don't have access</p>);
-    // }
+    if (this.props.user) {
+      console.log(this.props.user);
+      alert("User is:", this.props.user);
+      return(
+       <p> Game would go here </p>
+        );
+    }
+    else {
+      return(<p> You don't have access</p>);
+    }
 
     // Just render game here instead for now:
-    
+
   }
 }
 

@@ -13,7 +13,7 @@ var UserAuthSchema = new Schema({
     required: true
   },
 
-  pass: {
+  password: {
     type: String,
     required: true
   }

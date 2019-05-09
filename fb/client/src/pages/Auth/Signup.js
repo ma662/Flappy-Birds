@@ -53,7 +53,7 @@ onSubmit = e => {
     const newUser = {};
     newUser.username = this.state.username;
     newUser.email = this.state.email;
-    newUser.pass = this.state.password;
+    newUser.password = this.state.password;
 
     console.log("Sending newUser now");
     
@@ -114,7 +114,7 @@ return (
                   required
                   onChange={this.onChange}
                   value={this.state.password}
-                  name="pass"
+                  name="password"
                   // message={messages.password}
                   id="password"
                   type="password"

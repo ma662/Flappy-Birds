@@ -6,7 +6,7 @@ class LoginPage extends Component {
   state = {
     email: "",
     password: "",
-    errorMessage: null
+    message: null
   }
 
   handleInputChange = event => {
@@ -25,12 +25,12 @@ class LoginPage extends Component {
     
     // console.log(event.target);
     if (this.state.password.length < 1) {
-      return this.setState({errorMessage: "Password cannot be blank"});
+      return this.setState({message: "Password cannot be blank"});
     } 
     
     let temp = {};
     temp.email = this.state.email;
-    temp.pass = this.state.password;
+    temp.password = this.state.password;
     // console.log(this.state.email, this.state.password);
 
     console.log(temp);
@@ -47,13 +47,13 @@ class LoginPage extends Component {
     //     alert("USER VERIFIED");
     //     this.props.setUser(user);
     //     this.setState({
-    //       errorMessage: null
+    //       message: null
     //     });
     //   }
     //   else {
     //     alert("ALERT");
     //     this.setState({
-    //       errorMessage: "Credentials could not be verified"
+    //       message: "Credentials could not be verified"
     //     });
     //   }
     // }).catch(error => {
@@ -61,7 +61,7 @@ class LoginPage extends Component {
     //   console.log("Error above");
 
     //   this.setState({
-    //     errorMessage: "Could not log in"
+    //     message: "Could not log in"
     //   });
     })
     .catch( err => {
@@ -83,8 +83,8 @@ class LoginPage extends Component {
               onChange={this.handleInputChange}
               name="email"
               type="email"
-              className="form-control"
               id="email"
+              className="form-control"
               required
             />
           </div>
@@ -95,8 +95,8 @@ class LoginPage extends Component {
               onChange={this.handleInputChange}
               name="password"
               type="password"
-              className="form-control"
               id="password"
+              className="form-control"
               required
             />
           </div>
@@ -105,7 +105,7 @@ class LoginPage extends Component {
             Play Now
           </button>
         </form>
-        {this.state.errorMessage}
+        {this.state.message}
       </div>
     );
   }
