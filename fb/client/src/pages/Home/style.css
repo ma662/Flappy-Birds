@@ -290,31 +290,11 @@ img {
 
 
 
-#parallax { 
-  /* The image used */
-  background: url("/assets/images/clouds2.jpg");
-
-  /* Full height */
-  height: 100%; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+/*------------------------- desinging the flaoting gif  ----------------------------------*/
+.floatinggif {
+  background-color: #111216;
+  padding: 3vh;
 }
-
-.parallax-container {
-  /* Full height */
-  height: 30%; 
-
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
 
 /* ------------------scroll icon at Beginning----------------------------- */
 section {
