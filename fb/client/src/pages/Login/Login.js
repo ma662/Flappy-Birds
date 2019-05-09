@@ -1,12 +1,16 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import "./login.css";
+=======
+import { Link } from "react-router-dom";
+import "./style.css";
+>>>>>>> login3
 
 class LoginPage extends Component { 
   render() {
     return( 
-
       <div className="box flex " id="log-in">
-      <form action="login" method="POST">
+        <form action="login" method="POST">
           User Name:<br />
           <input className="text-box" type="text" name="name" />
           <br />
@@ -16,9 +20,9 @@ class LoginPage extends Component {
             <button className="button" type="submit">submit</button>
           <br />
           <br />
-            <a href="/signup">Create Account</a>
-      </form>
-    </div>
+            <Link to="/signup">Create Account</Link>
+        </form>
+      </div>
     );
   }
 }

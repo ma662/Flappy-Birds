@@ -12,24 +12,24 @@ const userSeed = [
     {
         email: "gardenstate36@gmail.com",
         username: "texasnumber6",
-        pass: "Bannanaboat"
+        password: "Bannanaboat"
     },
     {
         email: "talldrape77@yahoo.com",
         username: "carrettop",
-        pass: "1927baraquda"
+        password: "1927baraquda"
     }, {
         email: "coffeesucks@opt.net",
         username: "crowingo",
-        pass: "hogwartsisreal"
+        password: "hogwartsisreal"
     }, {
         email: "apecreate91176@gmail.com",
         username: "flappyfetheredthing",
-        pass: "area52iswheretherealstuffis"
+        password: "area52iswheretherealstuffis"
     }, {
         email: "flyingfortress52@hotmail.com",
         username: "crazyflappybirdman",
-        pass: "PassWord"
+        password: "PassWord"
     },
 ];
 

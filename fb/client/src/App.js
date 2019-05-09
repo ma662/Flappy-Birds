@@ -1,90 +1,85 @@
-import React, { Component, Fragment } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 // import "./App.css";
 import HomePage from "./pages/Home/Home";
 import GamePage from "./pages/Game/GamePage";
-import LoginPage from "./pages/Login/Login";
-import SignupPage from "./pages/Signup/Signup";
+import SignupPage from "./pages/Auth/Signup";
+import LoginPage from "./pages/Auth/Login";
 
-// class App extends Component {
-//   render() {
-//     return (
-
-//       <Home>
-//       </Home>
-//       // <div className="App">
-//       //   <div className="App-header">
-//       //     <img src={logo} className="App-logo" alt="logo" />
-//       //     <h2>Welcome to React</h2>
-//       //   </div>
-//       //   <p className="App-intro">
-//       //     To get soapgjag, edit <code>src/App.js</code> and save to reload.
-//       //   </p>
-//       // </div>
-
-
-//     );
-//   }
-// }
-
-
-
+import localAPI from "./util/local-auth";
 
 class App extends Component {
 
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     user: {}
-  //   }
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {}
+    }
+  }
+
+  componentDidMount = () => {
+    if (!this.state.user || !this.state.user.email) {
+      alert("Attempting retrieveUser()");
+
+      localAPI.retrieveUser().then(user => {
+        console.log(user);
+
+        if (user) {
+          this.setState({ user: user.data });
+        }
+      });
+    }
+  }
+
+  logOut = () => {
+    localAPI.logout().then( res => {
+      this.setUser({});
+      return <Redirect to='/'/>
+    })
+  }
+
+  setUser = user => {
+    this.setState({
+      user: user
+    });
+  };
+
+
   render() {
     return (
   
       <Router>
         <div>
-  
           <Route exact path="/"
             render={
               () => (
-                // <Fragment>
-                  <HomePage  />
-                // </Fragment>
+                <HomePage {...this.props} setUser={this.setUser} user={this.state.user} />
               )
             }
           />
-  
-          <Route exact path="/login"
-            render={
+
+          <Route exact path="/login" 
+            render = {
               () => (
-                // <Fragment>
-                  <LoginPage  />
-                // </Fragment>
-              )
-            }
-          />
+                <LoginPage {...this.props} setUser={this.setUser} user={this.state.user} />
+              )} />
+
   
           <Route exact path="/signup"
             render={
               () => (
-                // <Fragment>
-                  <SignupPage  />
-                // </Fragment>
-              )
-            }
+                <SignupPage />
+              )}
           />
-  
-          <Route exact path="/game" 
+
+          <Route exact path="/game"
             render={
               () => (
-                // <Fragment>
-                  <GamePage />
-                // </Fragment>
+                <GamePage {...this.props} setUser={this.setUser} user={this.state.user} />
               )
             }
           />
-  
         </div>
       </Router>
     );
