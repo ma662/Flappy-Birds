@@ -23,7 +23,7 @@ class App extends Component {
       alert("Attempting retrieveUser()");
 
       localAPI.retrieveUser().then(user => {
-        console.log(user);
+        console.log("User is:", user.data, " from App.js");
 
         if (user) {
           this.setState({ user: user.data });
@@ -48,7 +48,6 @@ class App extends Component {
 
   render() {
     return (
-  
       <Router>
         <div>
           <Route exact path="/"

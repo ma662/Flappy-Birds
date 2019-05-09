@@ -69,7 +69,7 @@ onSubmit = e => {
 }
 render() {
 // const { message } = this.state;
-return (
+  return (
       <div className="container">
         <div className="row">
           <div className="col s8 offset-s2">
@@ -148,7 +148,7 @@ return (
           </div>
         </div>
       </div>
-    );
-  }
+  );
+}
 }
 export default Signup;
