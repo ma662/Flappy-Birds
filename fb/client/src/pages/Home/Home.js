@@ -4,6 +4,8 @@ import "./style.css";
 import "./script.js";
 import "./animate.css";
 
+import BurgerMenu from "../../components/burger-menu/BurgerMenu";
+
 
 function Home() {
   return (
@@ -31,7 +33,7 @@ function Home() {
     
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/> 
 
-      <div className="menu-wrap">
+      {/* <div className="menu-wrap">
         <input type="checkbox" className="toggler" />
         <div className="hamburger">
           <div></div>
@@ -49,7 +51,9 @@ function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      <BurgerMenu/>
 
       <header className="showcase">
         <div className="container showcase-inner">

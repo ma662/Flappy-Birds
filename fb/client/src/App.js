@@ -22,7 +22,8 @@ class App extends Component {
     if (!this.state.user || !this.state.user.email) {
       alert("Attempting retrieveUser()");
 
-      localAPI.retrieveUser().then(user => {
+      localAPI.retrieveUser()
+      .then(user => {
         console.log("User is:", user.data, " from App.js");
 
         if (user) {

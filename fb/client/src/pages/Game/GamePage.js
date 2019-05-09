@@ -2,15 +2,12 @@ import React, { Component, Fragment } from 'react';
 import LocalAPI from "../../util/local-auth";
 import AppContainer from "./containers/AppContainer";
 
+import BurgerMenu from "../../components/burger-menu/BurgerMenu";
+
 class GamePage extends Component {
   componentDidMount = () => {
     LocalAPI.retrieveUser().then( userResponse => {
       // userResponse.data
-      console.log(userResponse);
-      console.log("LOGLOGLOGLOGLOGLOGLOGLOGLOGLOG");
-
-      console.log("CONFIRM:", userResponse.data);
-
       if(userResponse.data){
         this.props.setUser(userResponse.data); // email, username
       }
@@ -21,16 +18,15 @@ class GamePage extends Component {
     })
   }
   render() {
-    console.log(typeof(this.props.user));
-    console.log(this.props);
-
+    
     if (this.props.user) {
-      console.log("USER SHOULD BE: ", this.props.user.username, " from GamePage.js");
+      // console.log("USER SHOULD BE: ", this.props.user.username, " from GamePage.js");
       let m = this.props.user.username;
-      console.log("m is:", m);
+      // console.log("m is:", m);
       // alert("User is:", m);
       return(
         <Fragment>
+        <BurgerMenu/>
           <h3> Welcome {this.props.user.username}! </h3>
           <AppContainer />
         </Fragment>
@@ -39,9 +35,6 @@ class GamePage extends Component {
     else {
       return(<p> You don't have access</p>);
     }
-
-    // Just render game here instead for now:
-
   }
 }
 
