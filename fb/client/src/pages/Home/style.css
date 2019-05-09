@@ -365,6 +365,11 @@ section h1 {
 
 /* this design part is for info on designers */
 
+.portfolio {
+  text-align: center;
+}
+
+
 
 /* Three columns side by side */
 .column {

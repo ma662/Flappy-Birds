@@ -11,7 +11,7 @@
 }
 
 body {
-    
+    background-color: aquamarine;
     text-align: center;
     display: flex;
     justify-content: center;
@@ -29,5 +29,9 @@ body {
 
 .text-box {
     width: 60%
+}
+
+#log-in {
+    color: palevioletred;
 }
 
