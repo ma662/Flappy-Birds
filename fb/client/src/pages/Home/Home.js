@@ -4,7 +4,7 @@ import "./style.css";
 import "./script.js";
 import "./animate.css";
 
-import BurgerMenu from "../../components/burger-menu/BurgerMenu";
+// import BurgerMenu from "../../components/burger-menu/BurgerMenu";
 
 
 function Home() {
@@ -33,7 +33,7 @@ function Home() {
     
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/> 
 
-      {/* <div className="menu-wrap">
+      <div className="menu-wrap">
         <input type="checkbox" className="toggler" />
         <div className="hamburger">
           <div></div>
@@ -42,18 +42,18 @@ function Home() {
           <div>
             <div>
               <ul>
-                <li><a href="/home">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="/game">Game</a></li>
                 <li><a href="/signup">Sign-Up</a></li>
                 <li><a href="/login">Login</a></li>
-                <li><a href="/home">Logout</a></li>
+                <li><a href="/">Logout</a></li>
               </ul>
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
-      <BurgerMenu/>
+      {/* <BurgerMenu/> */}
 
       <header className="showcase">
         <div className="container showcase-inner">
@@ -95,8 +95,7 @@ function Home() {
         <div className="row">
 
           <div className="col-sm animated fadeInRight delay-3s">
-            <p>YOUR MISSION, SHOULD YOU CHOOSE TO ACCEPT IT: THIS GAME WAS DEVELOP TO TEST YOUR SKILL, PASSION, AND ABLILITY 
-            TO TRY AND GET THE TOP SCORE.</p>
+            <p>EXPERIENCE A GAME UNLIKE ANY OTHER. SIGNUP AND LOGIN TO GET INTO THE SINGLE-PLAYER EXPERIENCE OF A LIFETIME </p>
           </div>
 
         </div>
