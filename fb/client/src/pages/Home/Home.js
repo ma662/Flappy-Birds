@@ -1,68 +1,44 @@
 import React, { Fragment } from 'react';
-// import "./animate.css";
+
 import "./style.css";
 import "./script.js";
 import "./animate.css";
 
 // import BurgerMenu from "../../components/burger-menu/BurgerMenu";
 
-
 function Home() {
   return (
     
   <Fragment>
-    
-    {/* <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="/assets/css/style.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/animate.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="/assets/java/script.js" media="screen" /> 
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/>*/}
-
-      
-  
-    
-    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet"/> 
-
-      <div className="menu-wrap">
-        <input type="checkbox" className="toggler" />
-        <div className="hamburger">
-          <div></div>
-        </div>
-        <div className="menu">
+    <div className="menu-wrap">
+      <input type="checkbox" className="toggler" />
+      <div className="hamburger">
+        <div></div>
+      </div>
+      <div className="menu">
+        <div>
           <div>
-            <div>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/game">Game</a></li>
-                <li><a href="/signup">Sign-Up</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/">Logout</a></li>
-              </ul>
-            </div>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/game">Game</a></li>
+              <li><a href="/signup">Sign-Up</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/">Logout</a></li>
+            </ul>
           </div>
         </div>
       </div>
+    </div>
 
       {/* <BurgerMenu/> */}
 
       <header className="showcase">
         <div className="container showcase-inner">
           <h1 className="glow">CROW RUSH</h1>
-          <a href="/signup" className="btn btn-light">Start Game</a>
-          <div className="audio1">
-            <audio id="myAudio" controls>
-            <source src="/assets/images/song.mp4" type="audio/mp4">
-            </source>
+          {/* <a href="/signup" className="btn btn-light">Start Game</a> */}
+          <div className="audio1"style={{width: "100%"}}>
+            <audio id="myAudio" controls style={{width: "100%"}}>
+              <source src="/assets/audio/song.mp4" type="audio/mp4"></source>
             </audio>
           </div>
           <section id="section05" class="demo">
@@ -77,8 +53,6 @@ function Home() {
           <div className="col-12">
             <h6 className="power">Powered By:</h6>
           </div>
-          {/* <!-- <div className="col-sm">
-        </div> -->  */}
           <div className="col-12 reactlogo animated zoomIn delay-2s">
             <img src="assets/images/react_logo.png" alt="react-logo" width="150rem" height="200rem" />
           </div>
@@ -125,9 +99,6 @@ function Home() {
             <div class="carousel-item">
               <img src="/assets/images/gallery5.jpg" class="size" alt="..." />
             </div>
-            {/* <div class="carousel-item">
-              <img src="/assets/images/gallery5.jpg" class="size" alt="..." />
-            </div> */}
           </div>
           <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
