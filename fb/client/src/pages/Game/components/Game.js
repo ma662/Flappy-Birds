@@ -16,7 +16,11 @@ function Game(props) {
 					handleScore={props.handleScore} />
 				<PillarContainer isGameOver={props.isGameOver} />
 				<Score score={props.score} />
-				{props.isGameOver && <GameOver />}
+        {props.isGameOver && <GameOver />}
+        
+        <div className="bg">
+          <img src="./assets/images/mountainbackground.png"></img>
+        </div>
 			</div>
 		);
 	} else {

@@ -32,7 +32,11 @@ class GamePage extends Component {
           <div className="game-container" style={{"width":"500px"}}>
           <GameContainer />
           </div>
-          <h3> Welcome <span id="user-display">{this.props.user.username}!</span></h3>
+
+          <div className="info-tracker">
+          {/* THIS NEEDS TO GO IN ITS OWN SECFTION */}
+            <h3> Welcome <span id="user-display">{this.props.user.username}!</span></h3>
+          </div> 
         </div>
         );
     }
