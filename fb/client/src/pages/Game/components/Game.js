@@ -6,21 +6,26 @@ import Score from "./Score";
 import GameOver from "./GameOver";
 import StartScreen from "./StartScreen";
 
-function App(props) {
+function Game(props) {
 	if (props.isGameStarted) {
 		return (
 			<div>
-				<BirdContainer isGameOver={props.isGameOver}
+        <BirdContainer 
+          isGameOver={props.isGameOver}
 					handleGameOver={props.handleGameOver}
 					handleScore={props.handleScore} />
 				<PillarContainer isGameOver={props.isGameOver} />
 				<Score score={props.score} />
-				{props.isGameOver && <GameOver />}
+        {props.isGameOver && <GameOver />}
+        
+        <div className="bg">
+          <img src="./assets/images/mountainbackground.png"></img>
+        </div>
 			</div>
 		);
 	} else {
-		return <StartScreen />;
+    return <StartScreen />;
 	}
 }
 
-export default App;
+export default Game;

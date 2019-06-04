@@ -1,10 +1,11 @@
 #bird {
-  border-radius: 50%;
-  background-color: white;
-  width: 1.5em;
-  height: 1.5em;
+  /* border-radius: 50%;*/
+  /* background-color: white;  */
+  background-image: "./images/crow1.png";
+  width: 150px;
+  height: 150px;
   position: absolute;
   top: 250px;
   left: 40px;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
