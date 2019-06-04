@@ -1,9 +1,9 @@
 import React from "react";
-import App from "../components/App";
+import Game from "../components/Game";
 
 import $ from "jquery";
 
-class AppContainer extends React.Component {
+class GameContainer extends React.Component {
     constructor(props) {
         super(props);
 
@@ -40,7 +40,7 @@ class AppContainer extends React.Component {
         this.setState({
             score
         }, function () {
-            console.log(score);
+            console.log("Score: ", score);
         });
     }
 
@@ -48,7 +48,7 @@ class AppContainer extends React.Component {
         let isGameOver = this.state.isGameOver;
         let score = this.state.score;   
         let isGameStarted = this.state.isGameStarted;     
-        return <App
+        return <Game
             isGameOver={isGameOver}
             isGameStarted={isGameStarted}
             score={score}
@@ -57,4 +57,4 @@ class AppContainer extends React.Component {
     }
 }
 
-export default AppContainer;
+export default GameContainer;

@@ -1,15 +1,18 @@
 #startScreen {
   color: #03A9F4;
-  font-size: 2em;
+  font-size: 20px;
   font-weight: bold;
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: table;
   position: absolute;
-  text-align: center;
+  text-align: left;
+  margin-left: -15em;
+
 }
 
 #startScreen div {
+  top: 0;
   display: table-cell;
   vertical-align: middle;
 }
