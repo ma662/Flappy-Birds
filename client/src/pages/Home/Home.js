@@ -104,7 +104,7 @@ function Home() {
                 <h2>Tristan</h2>
                 <p className="title">Front-End Designer</p>
                 <p>Tristanmartin88@gmail.com</p>
-                <p><a className="portfolio" href="https://smove50.github.io/portfolio/"><button className="port-button">Portfolio</button></a></p>
+                <p><a className="portfolio" href="https://tristandmartin.github.io/portfolio/"><button className="port-button">Portfolio</button></a></p>
               </div>
             </div>
           </div>
