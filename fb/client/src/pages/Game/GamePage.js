@@ -25,19 +25,11 @@ class GamePage extends Component {
       // console.log("m is:", m);
       // alert("User is:", m);
       return(
-        <div className="page">
-          <div className="burger">
-            <BurgerMenu />
-          </div>
-          <div className="game-container" style={{"width":"500px"}}>
-          <GameContainer />
-          </div>
-
-          <div className="info-tracker">
-          {/* THIS NEEDS TO GO IN ITS OWN SECFTION */}
-            <h3> Welcome <span id="user-display">{this.props.user.username}!</span></h3>
-          </div> 
-        </div>
+        <Fragment>
+        <BurgerMenu/>
+          <h3> Welcome {this.props.user.username}! </h3>
+          <AppContainer />
+        </Fragment>
         );
     }
     else {
