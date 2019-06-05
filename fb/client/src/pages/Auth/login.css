@@ -44,7 +44,16 @@ body {
 }
 
 .auth-form {
+    width: 50vh;
     margin-top: 10vh;
     padding: 4vh;
     background-color: white;
+}
+
+.containerlogin {
+    width: 50vh;
+}
+
+.grey-text {
+    color: #ff4da6;
 }

@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import LocalAPI from "../../util/local-auth";
-import GameContainer from "./containers/GameContainer";
+import AppContainer from "./containers/AppContainer";
 
-import BurgerMenu from "../../components/burger-menu/BurgerMenu";
+import "./gamepage.css";
 
 class GamePage extends Component {
   componentDidMount = () => {
@@ -12,7 +12,7 @@ class GamePage extends Component {
         this.props.setUser(userResponse.data); // email, username
       }
       else{
-        return window.location = "/login";
+        window.location = "/login";
         // alert("Please Login");
       }
     })
@@ -25,24 +25,15 @@ class GamePage extends Component {
       // console.log("m is:", m);
       // alert("User is:", m);
       return(
-        <div className="page">
-          <div className="burger">
-            <BurgerMenu />
-          </div>
-          <div className="game-container" style={{"width":"500px"}}>
-          <GameContainer />
-          </div>
-
-          <div className="info-tracker">
-          {/* THIS NEEDS TO GO IN ITS OWN SECFTION */}
-            <h3> Welcome <span id="user-display">{this.props.user.username}!</span></h3>
-          </div> 
+        <div className="gamePage">
+        {/* <BurgerMenu/> */}
+          <h3> Welcome {this.props.user.username}! </h3>
+          <AppContainer />
         </div>
         );
     }
     else {
-      return(
-        <p> You don't have access</p>);
+      return(<p> You don't have access</p>);
     }
   }
 }

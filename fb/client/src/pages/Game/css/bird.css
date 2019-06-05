@@ -1,9 +1,10 @@
 #bird {
-  /* border-radius: 50%;*/
-  /* background-color: white;  */
-  background-image: "./images/crow1.png";
-  width: 150px;
-  height: 150px;
+  /* border-radius: 50%; */
+  /* background-color: white; */
+  background: url("/assets/images/game/1.png") no-repeat;
+  background-size: 40px;
+  width: 3em;
+  height: 3em;
   position: absolute;
   top: 250px;
   left: 40px;

@@ -1,4 +1,4 @@
-#sign-up,
+/* #sign-up,
 #log-in {
     color: red;
     background-color: rgb(238, 197, 84);
@@ -8,9 +8,9 @@
     font-size: medium;
     font-family: "press Start 2P", cursive;
     opacity: .8;
-}
+} */
 
-body {
+/* body {
     padding-top: 50px;
     text-align: center;
     display: flex;
@@ -18,15 +18,15 @@ body {
     background: url("/assets/images/8-bit-background-1.jpg");
     background-repeat: no-repeat;
     background-size: 100vw;
-}
+} */
 
-.button {
+/* .button {
     font-family: "press Start 2P", cursive;
     padding: 5%;
     font-size: medium;
 
-}
+} */
 
 .text-box {
-    width: 60%
+    width: 500%
 }

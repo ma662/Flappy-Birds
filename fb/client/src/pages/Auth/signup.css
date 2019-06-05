@@ -10,8 +10,8 @@
 .btn {
     background-color: blue;
 }
-
-.containersign:before {
+/* background picture formatted  */
+.containersign:before { 
     content: '';
     background: url("/assets/images/8-bit-background-1.jpg");
     position: absolute;
@@ -25,9 +25,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-
+/* container sizing */
 .containersign {
+    width: 50vh;
     margin-top: 10vh;
-    padding: 4vh;
+    padding: 3vh;
     background-color: white;
 }

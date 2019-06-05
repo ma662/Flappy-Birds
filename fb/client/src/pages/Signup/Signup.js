@@ -16,7 +16,7 @@ class SignupPage extends Component {
           Confim Password:<br />
           <input class="text-box" type="text" name="confpassword" />
           <br />
-          <button class="button" type="submit">Submit</button>
+          <button class="button" type="submit">Submit</button >
         </form>
     </div>
     );
