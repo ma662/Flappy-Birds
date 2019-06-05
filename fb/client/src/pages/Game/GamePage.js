@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import LocalAPI from "../../util/local-auth";
 import AppContainer from "./containers/AppContainer";
 
-import BurgerMenu from "../../components/burger-menu/BurgerMenu";
+import "./gamepage.css";
 
 class GamePage extends Component {
   componentDidMount = () => {
@@ -25,11 +25,11 @@ class GamePage extends Component {
       // console.log("m is:", m);
       // alert("User is:", m);
       return(
-        <Fragment>
-        <BurgerMenu/>
+        <div className="gamePage">
+        {/* <BurgerMenu/> */}
           <h3> Welcome {this.props.user.username}! </h3>
           <AppContainer />
-        </Fragment>
+        </div>
         );
     }
     else {
