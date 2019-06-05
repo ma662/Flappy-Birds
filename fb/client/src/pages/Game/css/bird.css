@@ -1,8 +1,8 @@
 #bird {
   /* border-radius: 50%; */
   /* background-color: white; */
-  background: url("/assets/images/game/1.png") no-repeat;
-  background-size: 40px;
+  background: url("/assets/images/game/crow-animated.gif") no-repeat;
+  background-size: 60px;
   width: 3em;
   height: 3em;
   position: absolute;
