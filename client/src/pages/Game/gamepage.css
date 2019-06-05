@@ -3,8 +3,8 @@
   overflow: hidden;
 
   background-color: pink;
-  background: url(/assets/images/game/game-bg1.png) -32px -32px no-repeat;
-  background-size: 115%;
+  background: url(/assets/images/game/game-bg1.png) -32px -32px;
+  background-size: cover;
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -16,4 +16,16 @@
 
 .pillar {
   background-color: black;
+}
+
+#info-tracker { 
+  z-index: 15;
+  position: absolute;
+  text-align: right;
+  float: right;
+  top: 0; left: 0; bottom: 0; right:0;
+  color: white;
+  /* background-color: magenta;
+  width: 15em;
+  height: 15em; */
 }

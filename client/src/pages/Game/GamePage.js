@@ -24,11 +24,11 @@ class GamePage extends Component {
       return(
         <div className="gamepage">
           {/* THIS NEEDS TO GO IN ITS OWN SECTION */}
-          <AppContainer />
           <div id="info-tracker">
             <h3> Welcome <span id="user-display">{this.props.user.username}!</span></h3>
             <h6> Best Score: </h6>
           </div> 
+          <AppContainer />
         </div>
         );
     }

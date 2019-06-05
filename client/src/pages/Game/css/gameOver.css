@@ -1,15 +1,11 @@
 #gameOver {
   font-size: 3em;
   color: #03A9F4;
-  position: absolute;
   font-weight: bold;
-  top: 0;
-  left: 0;
 
-  margin-left: 33%;
-  margin-right: auto;
-  margin-top: 10%;
-  margin-bottom : auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
 
   text-align: center;
   z-index: 15;
