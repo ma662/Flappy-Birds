@@ -100,7 +100,7 @@ class LoginPage extends Component {
         <div className="containerlogin">
           <form className="auth-form" type="POST">
             <p className="grey-text text-darken-1">
-              LOG IN TO START GAME
+              LOGIN TO PLAY
             </p>
             <div className="form-group">
               <label htmlFor="email">Email:</label>

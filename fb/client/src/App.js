@@ -54,7 +54,7 @@ class App extends Component {
           <Route exact path="/"
             render={
               () => (
-                <HomePage {...this.props} setUser={this.setUser} user={this.state.user} />
+                <HomePage {...this.props} setUser={this.setUser} user={this.state.user}logOut={this.logOut}/>
               )
             }
           />
@@ -76,7 +76,7 @@ class App extends Component {
           <Route exact path="/game"
             render={
               () => (
-                <GamePage {...this.props} setUser={this.setUser} user={this.state.user} />
+                <GamePage {...this.props} setUser={this.setUser} user={this.state.user} logOut={this.logOut} />
               )
             }
           />

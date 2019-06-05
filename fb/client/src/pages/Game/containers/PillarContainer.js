@@ -52,7 +52,10 @@ export default class PillarContainer extends React.Component {
 							// marginBottom: "100px",
 							left: this.leftMargin + "px",
 							width: "50px",
-							backgroundColor: "white"
+							// background: "url(/assets/images/game/pillar.png) 100% no-repeat",
+							// backgroundSize: "cover"
+
+							backgroundColor: "darkgray"
 						}}
 						key={v4()}
 						id={abovePillarId}
@@ -67,7 +70,11 @@ export default class PillarContainer extends React.Component {
 							top: topHeight + 120,
 							left: this.leftMargin + "px",
 							width: "50px",
-							backgroundColor: "white"
+							// background: "url(/assets/images/game/pillar.png) 100% no-repeat",
+							// backgroundSize: "cover"
+
+
+							backgroundColor: "darkgray"
 						}}
 						key={v4()}
 						id={belowPillarId}
@@ -105,7 +112,10 @@ export default class PillarContainer extends React.Component {
 						// marginBottom: "100px",
 						left: this.leftMargin + "px",
 						width: "50px",
-						backgroundColor: "white"
+						backgroundColor: "darkgray"
+						// background: "url(/assets/images/game/pillar.png) 100% no-repeat",
+						// backgroundSize: "cover"
+
 					}}
 					key={i}
 					id={abovePillarId}
@@ -121,7 +131,11 @@ export default class PillarContainer extends React.Component {
 						top: topHeight + 120,
 						left: this.leftMargin + "px",
 						width: "50px",
-						backgroundColor: "white"
+						// background: "url(/assets/images/game/pillar.png) 100% no-repeat",
+						// backgroundSize: "cover"
+
+
+						backgroundColor: "darkgray"
 					}}
 					key={i + 1}
 					id={belowPillarId}
