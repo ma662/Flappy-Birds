@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import LocalAPI from "../../util/local-auth";
-import GameContainer from "./containers/GameContainer";
+import AppContainer from "./containers/AppContainer";
 
 import BurgerMenu from "../../components/burger-menu/BurgerMenu";
 
@@ -12,7 +12,7 @@ class GamePage extends Component {
         this.props.setUser(userResponse.data); // email, username
       }
       else{
-        return window.location = "/login";
+        window.location = "/login";
         // alert("Please Login");
       }
     })
@@ -41,8 +41,7 @@ class GamePage extends Component {
         );
     }
     else {
-      return(
-        <p> You don't have access</p>);
+      return(<p> You don't have access</p>);
     }
   }
 }
