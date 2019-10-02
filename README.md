@@ -1,4 +1,4 @@
-# Crow-Rush
+# Flappy-Birds
 MERN Stack Flappy Bird browser game built with React and Passport/bCrypt for authentication security.
 
 ![](flappy-birds-demo.gif)
