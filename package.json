@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.0",
-    "bcrypt": "^3.0.6",
+    "bcrypt": "^5.0.0",
     "cookie-parser": "^1.4.4",
     "express": "^4.16.3",
     "express-session": "^1.16.1",
